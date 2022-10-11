@@ -1,26 +1,45 @@
-$ npm install --save --force next-export-i18n
+# 1. How to run this app:
 
-Copy the i18n folder from epam dww web
-configure i18n/index.js and i18n/lang.js based on your need
+$ npm install --force
+$ npm run dev
 
-import { useTranslation } from "next-export-i18n";
-const { t } = useTranslation();
-console.log(t("general.button.cancel"));
+# 2. How to use localization:
 
-> it just works
+- Run app and go to this route: localhost:3000/demo/i18n
+- See this file: pages/demo/i18n.tsx
 
-When you have a new locales file, visit i18n/index.js to add it
+  +, See all the files imported in this file
 
-link:
+- To add new text:
 
-https://hackmd.io/JmVMaCjKQ8OR8nHu9oR3VQ
+  +, Step 1: Go to this folder i18n/en
 
-$ npm install --save --force axios
+  +, Step 2: Go to a json file or create a new json file.
+  In case you need to create a new json file, go to this file: i18n/index.js and add the file name in the `fileNames` array
 
-Redux:
+  +, Step 3: Add text in the json file. Make sure the content of the json file in the i18n/vi and i18n/en matches
 
-$ npm install --save --force @reduxjs/toolkit @types/react-redux react-redux redux redux-thunk
+  +, Step 4: Use the text. See this folder: containers/Demo/i18n.tsx (route: localhost:3000/demo/i18n)
 
-See files in @/stores
-See setup in @/pages/app.tsx
-See how to use it in @/hooks/useLoading.tsx
+# 3. How to use loading component:
+
+- See in this file: containers/Demo/DataFetching.tsx
+
+# 4. Using styles:
+
+- Import color from this file: styles/colors.scss
+- Import font-weight and font-size from this file: styles/typography.scss
+- See how to import in this file: containers/Demo/Demo.module.scss
+
+# 5. How to use Redux:
+
+- See this file: /hooks/useLoading.ts
+- See setup in this folder:
+  +, /store/reducers/loadingReducer.ts
+  +, /store/reducers/index.ts
+
+# 6. How to fetch data:
+
+- See these files:
+  +, /containers/Demo/DataFetching.tsx
+  +, /api/demo.tsx
