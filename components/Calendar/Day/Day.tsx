@@ -11,7 +11,7 @@ const Day = ({ day, onClick }: PropsType) => {
     day.isCurrentDay ? "currentDay" : ""
   }`;
   return (
-    <div onClick={onClick} className={classes.a}>
+    <div onClick={onClick} className={classes.day}>
       {day.value === "padding" ? "" : day.value}
 
       {day.event && <div className={classes.event}>{day.event.title}</div>}
