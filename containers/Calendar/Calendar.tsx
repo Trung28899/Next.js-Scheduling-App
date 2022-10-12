@@ -3,7 +3,7 @@ import classes from "./Calendar.module.scss";
 import CalendarHeader from "@/components/Calendar/Header/Header";
 import useDate from "@/components/Calendar/Date/useDate";
 import Day from "@/components/Calendar/Day/Day";
-import OpenModal from "@/components/OpenModal/OpenModal";
+import OpenModal from "@/components/Calendar/OpenModal/OpenModal";
 import DeleteModal from "@/components/Calendar/DeleteModal/DeleteModal";
 
 function Calendar() {
