@@ -20,7 +20,7 @@ type daysArrType2 = {
 };
 
 const useDate = ({ events, nav }: TypesProp) => {
-  const [dateDisplay, setDateDisplay] = useState("");
+  const [monthYearDisplay, setmonthYearDisplay] = useState("");
   const [days, setDays] = useState<(daysArrType | daysArrType2)[]>([]);
 
   const eventForDate = (date: string) =>
@@ -55,7 +55,7 @@ const useDate = ({ events, nav }: TypesProp) => {
       day: "numeric",
     });
 
-    setDateDisplay(
+    setmonthYearDisplay(
       `${dt.toLocaleDateString("en-us", { month: "long" })} ${year}`
     );
     const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
@@ -87,7 +87,7 @@ const useDate = ({ events, nav }: TypesProp) => {
 
   return {
     days,
-    dateDisplay,
+    monthYearDisplay,
   };
 };
 

@@ -22,12 +22,12 @@ function Calendar() {
     localStorage.setItem("events", JSON.stringify(events));
   }, [events]);
 
-  const { days, dateDisplay } = useDate({ events, nav });
+  const { days, monthYearDisplay } = useDate({ events, nav });
 
   return (
     <div className={classes.container}>
       <CalendarHeader
-        dateDisplay={dateDisplay}
+        monthYearDisplay={monthYearDisplay}
         onBack={() => setNav(nav - 1)}
         onNext={() => setNav(nav + 1)}
       />
@@ -46,6 +46,7 @@ function Calendar() {
         {days.map((d: any, index) => (
           <Day
             key={index}
+            indexKey={index}
             day={d}
             onClick={() => {
               if (d.value !== "padding") {
