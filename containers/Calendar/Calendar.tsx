@@ -5,10 +5,15 @@ import useDate from "@/components/Calendar/Date/useDate";
 import Day from "@/components/Calendar/Day/Day";
 import OpenModal from "@/components/Calendar/OpenModal/OpenModal";
 import DeleteModal from "@/components/Calendar/DeleteModal/DeleteModal";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function Calendar() {
+  const dispatch = useDispatch();
   const [nav, setNav] = useState(0);
   const [clicked, setClicked] = useState(null);
+  const [openmodal, setOpenmodal] = useState(false);
+
   const [events, setEvents] = useState(
     typeof window !== "undefined" && localStorage.getItem("events")
       ? JSON.parse(localStorage.getItem("events") || "")
@@ -51,12 +56,13 @@ function Calendar() {
             onClick={() => {
               if (d.value !== "padding") {
                 setClicked(d.date);
+                console.log(1);
               }
             }}
+            onDelete={() => console.log("a")}
           />
         ))}
       </div>
-
       {clicked && !eventForDate(clicked) && (
         <OpenModal
           onClose={() => setClicked(null)}
