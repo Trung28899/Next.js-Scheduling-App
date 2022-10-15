@@ -1,4 +1,6 @@
+@import "@/styles/colors.scss";
+
 .container {
-  background-color: #2a2820;
+  background-color: $title_background;
   height: 48px;
 }

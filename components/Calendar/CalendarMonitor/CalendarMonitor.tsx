@@ -14,7 +14,7 @@ function CalendarGrid({ startDay, today }: PropsType) {
 
   const isCurrentDay = (day: any) => moment().isSame(day, "day");
   const isSelectedMonth = (day: any) => today.isSame(day, "month");
-
+  isSelectedMonth;
   return (
     <>
       <div className={classes.weekContainer}>
@@ -32,15 +32,25 @@ function CalendarGrid({ startDay, today }: PropsType) {
           <div
             // key={dayItem.format("DDMMYYYY")}
 
-            className={classes.cellWrapper}
             key={dayItem.unix()}
-            style={{
-              color: isSelectedMonth(dayItem) ? "#DDDDDD" : "#555759",
-              backgroundColor:
-                dayItem.day() === 6 || dayItem.day() === 0
-                  ? "#272829"
-                  : "#1E1F21",
-            }}
+            className={
+              classes.cellWrapper +
+              " " +
+              (isSelectedMonth(dayItem)
+                ? classes.colorCurrentMonth
+                : classes.colorNotCurrentMonth) +
+              " " +
+              (dayItem.day() === 6 || dayItem.day() === 0
+                ? classes.backgroundWeek
+                : classes.backgroundNotWeek)
+            }
+            // style={{
+            //   color: isSelectedMonth(dayItem) ? "#DDDDDD" : "#555759",
+            //   backgroundColor:
+            //     dayItem.day() === 6 || dayItem.day() === 0
+            //       ? "#272829"
+            //       : "#1E1F21",
+            // }}
           >
             <div className={classes.rowInCell}>
               <div className={classes.dayWrapper}>

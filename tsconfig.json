@@ -25,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.js",
-    "components/Table/Table.jsx"
-, "components/HeaderCalendar/HeaderCalendar.jsx"  ],
+    "components/Table/Table.jsx",
+    "components/Calendar/HeaderCalendar/HeaderCalendar.jsx"
+  ],
   "exclude": ["node_modules"]
 }

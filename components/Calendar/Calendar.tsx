@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "@/components/Title/Title";
-import HeaderCalendar from "@/components/HeaderCalendar/HeaderCalendar";
-import CalendarMonitor from "@/components/CalendarMonitor/CalendarMonitor";
+import HeaderCalendar from "@/components/Calendar/HeaderCalendar/HeaderCalendar";
+import CalendarMonitor from "@/components/Calendar/CalendarMonitor/CalendarMonitor";
 import { useState } from "react";
 import moment from "moment";
 
