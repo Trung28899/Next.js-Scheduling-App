@@ -1,8 +1,10 @@
+@import "@/styles/colors.scss";
+
 .container {
   display: flex;
   justify-content: space-between;
-  background-color: #1e1f21;
-  color: #dcdddd;
+  background-color: $black_01;
+  color: $gray_03;
   padding: 16px;
 
   .title {
@@ -32,11 +34,11 @@
 
 .buttonContainer button {
   border: unset;
-  background-color: #565759;
+  background-color: $black_02;
   height: 20px;
   margin-right: 4px;
   border-radius: 4px;
-  color: #e6e6e6;
+  color: $gray_01;
 }
 
 .buttonContainer button:hover {

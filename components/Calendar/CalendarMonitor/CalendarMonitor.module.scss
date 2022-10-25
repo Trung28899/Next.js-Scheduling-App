@@ -1,20 +1,21 @@
+@import "@/styles/colors.scss";
+
 .weekContainer {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  background-color: #484848;
+  background-color: $black_02;
   grid-gap: 1px;
 
   .cellWrapperHeader {
-    background-color: #1e1f21;
+    background-color: $black_01;
     min-width: 140px;
     min-height: 24px;
-    border-bottom: 1px #484848 solid;
+    border-bottom: 1px $black_02 solid;
     display: flex;
     justify-content: flex-end;
-    color: #dddcdd;
+    color: $gray_03;
     padding-right: 9px;
     box-sizing: border-box;
-    /* display: inline-block; */
   }
 }
 
@@ -22,14 +23,14 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 2fr);
-  background-color: #484848;
+  background-color: $black_02;
   grid-gap: 1px;
 
   .cellWrapper {
     min-width: 140px;
     min-height: 80px;
-    background-color: #1e1f21;
-    color: #dddcdd;
+    background-color: $black_01;
+    color: $gray_03;
 
     .rowInCell {
       display: flex;
@@ -69,6 +70,6 @@
   }
 
   .backgroundNotWeek {
-    background-color: #1e1f21;
+    background-color: $black_01;
   }
 }
