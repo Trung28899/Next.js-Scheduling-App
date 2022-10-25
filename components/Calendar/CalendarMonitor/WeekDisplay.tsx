@@ -7,10 +7,10 @@ function WeekDisplay() {
     <div>
       {" "}
       <div className={classes.weekContainer}>
-        {[...Array(7)].map((_, i) => (
-          <div className={classes.cellWrapperHeader}>
+        {[...Array(7)].map((_, index) => (
+          <div key={index} className={classes.cellWrapperHeader}>
             {moment()
-              .day(i + 1)
+              .day(index + 1)
               .format("dddd")}
           </div>
         ))}

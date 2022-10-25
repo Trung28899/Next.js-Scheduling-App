@@ -1,7 +1,7 @@
-import moment from "moment";
 import React from "react";
 import classes from "./CalendarMonitor.module.scss";
 import WeekDisplay from "./WeekDisplay";
+import DayItem from "./DayItem";
 
 type PropsType = {
   startDay: any;
@@ -13,41 +13,13 @@ function CalendarGrid({ startDay, today }: PropsType) {
   const day = startDay.clone().subtract(1, "day");
   const daysMap = [...Array(totalDays)].map(() => day.add(1, "day").clone());
 
-  const isCurrentDay = (day: any) => moment().isSame(day, "day");
-  const isSelectedMonth = (day: any) => today.isSame(day, "month");
-
   return (
     <div>
       <WeekDisplay />
 
       <div className={classes.container}>
         {daysMap.map((dayItem) => (
-          <div
-            key={dayItem.unix()}
-            className={
-              classes.cellWrapper +
-              " " +
-              (isSelectedMonth(dayItem)
-                ? classes.colorCurrentMonth
-                : classes.colorNotCurrentMonth) +
-              " " +
-              (dayItem.day() === 6 || dayItem.day() === 0
-                ? classes.backgroundWeek
-                : classes.backgroundNotWeek)
-            }
-          >
-            <div className={classes.rowInCell}>
-              <div className={classes.dayWrapper}>
-                {isCurrentDay(dayItem) && (
-                  <div className={classes.currentDay}>
-                    {dayItem.format("D")}
-                  </div>
-                )}
-
-                {!isCurrentDay(dayItem) && dayItem.format("D")}
-              </div>
-            </div>
-          </div>
+          <DayItem today={today} dayItem={dayItem} />
         ))}
       </div>
     </div>
