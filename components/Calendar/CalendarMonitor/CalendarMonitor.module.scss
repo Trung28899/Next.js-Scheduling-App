@@ -1,0 +1,75 @@
+@import "@/styles/colors.scss";
+
+.weekContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: $black_02;
+  grid-gap: 1px;
+
+  .cellWrapperHeader {
+    background-color: $black_01;
+    min-width: 140px;
+    min-height: 24px;
+    border-bottom: 1px $black_02 solid;
+    display: flex;
+    justify-content: flex-end;
+    color: $gray_03;
+    padding-right: 9px;
+    box-sizing: border-box;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 2fr);
+  background-color: $black_02;
+  grid-gap: 1px;
+
+  .cellWrapper {
+    min-width: 140px;
+    min-height: 80px;
+    background-color: $black_01;
+    color: $gray_03;
+
+    .rowInCell {
+      display: flex;
+      justify-content: flex-end;
+
+      .dayWrapper {
+        height: 31px;
+        width: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .currentDay {
+          width: 100%;
+          height: 100%;
+          background-color: #f00;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .colorCurrentMonth {
+    color: #dddddd;
+    // font-size: 12px;
+  }
+
+  .colorNotCurrentMonth {
+    color: #555759;
+  }
+
+  .backgroundWeek {
+    background-color: #272829;
+  }
+
+  .backgroundNotWeek {
+    background-color: $black_01;
+  }
+}
