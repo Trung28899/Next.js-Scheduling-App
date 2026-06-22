@@ -1,0 +1,50 @@
+@import "@/styles/colors.scss";
+@import "@/styles/variables.scss";
+
+.day {
+  width: 110px;
+  padding: 10px;
+  height: 110px;
+  box-sizing: border-box;
+  background-color: $white;
+  border: 1px solid $green_gray;
+  border-left: none;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 14px;
+  overflow: hidden;
+  box-sizing: border-box;
+  &:hover {
+    background-color: $white_green;
+  }
+}
+
+.dayBorderLeft {
+  @extend .day;
+  border-left: 1px solid $green_gray;
+}
+
+.padding {
+  cursor: default !important;
+  background-color: $white_pink !important;
+  box-shadow: none !important;
+}
+
+.day + .currentDay {
+  background-color: $white_blue;
+}
+
+.event {
+  padding: 2.5px 8px;
+  background-color: $secondary_sky_blue_light;
+  border-radius: $border-radius-small;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  transform: translate(3px, -115%);
+  position: absolute;
+  width: 103.5px;
+  text-overflow: ellipsis;
+}

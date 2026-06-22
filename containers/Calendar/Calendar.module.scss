@@ -1,0 +1,30 @@
+@import "@/styles/colors.scss";
+
+.container {
+  width: 770px;
+}
+
+.weekdays {
+  width: 100%;
+  display: flex;
+  color: #247ba0;
+
+  div {
+    width: 110px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid $green_gray;
+    border-left: none;
+  }
+
+  div:first-child {
+    border-left: 1px solid $green_gray;
+  }
+}
+
+.calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
